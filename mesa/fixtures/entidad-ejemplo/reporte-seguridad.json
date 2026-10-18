@@ -1,0 +1,47 @@
+[
+  {
+    "id": "EJ-001",
+    "title": "El formulario de contacto no separa datos de la consulta",
+    "severity": "high",
+    "timestamp": "2026-10-02 09:41:00 UTC",
+    "finding_class": "dynamic",
+    "cvss": "8.1",
+    "confidence": "high",
+    "cwe": "CWE-89",
+    "target": "https://app.ejemplo.cl",
+    "endpoint": "/contacto",
+    "method": "POST",
+    "remediation_steps": "Usar consultas parametrizadas y separar la entrada de usuario de la instrucción SQL.",
+    "agent_name": "scanner"
+  },
+  {
+    "id": "EJ-002",
+    "title": "Carga de archivos sin validación de extensión",
+    "severity": "medium",
+    "timestamp": "2026-10-02 09:43:00 UTC",
+    "finding_class": "dynamic",
+    "cvss": "6.5",
+    "confidence": "medium",
+    "cwe": "CWE-434",
+    "target": "https://app.ejemplo.cl",
+    "endpoint": "/contacto/subir",
+    "method": "POST",
+    "remediation_steps": "Validar la extensión contra una lista blanca y no servir el archivo desde el mismo origen.",
+    "agent_name": "scanner"
+  },
+  {
+    "id": "EJ-003",
+    "title": "El servidor declara su versión en la cabecera de respuesta",
+    "severity": "low",
+    "timestamp": "2026-10-02 09:45:00 UTC",
+    "finding_class": "passive",
+    "cvss": "3.1",
+    "confidence": "high",
+    "cwe": "CWE-200",
+    "target": "https://app.ejemplo.cl",
+    "endpoint": "/",
+    "method": "GET",
+    "remediation_steps": "Ocultar la cabecera de versión en la configuración del servidor.",
+    "agent_name": "scanner"
+  }
+]

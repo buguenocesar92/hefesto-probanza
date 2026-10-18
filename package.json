@@ -1,0 +1,25 @@
+{
+  "name": "hefesto-probanza",
+  "version": "0.1.0",
+  "description": "Eje de evidencia: une los consentimientos de ARCOP con las salidas del anonimizador y responde, envío por envío, si había autorización.",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./nucleo/index.mjs"
+  },
+  "scripts": {
+    "test": "node tools/probar.mjs",
+    "start": "node server/index.mjs",
+    "informe": "node cli/informe.mjs",
+    "puerta": "node puerta/ruta.mjs",
+    "mesa": "node mesa/ruta.mjs",
+    "cobertura": "node tools/medir-cobertura.mjs",
+    "guarda": "node tools/comprobar-guarda.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

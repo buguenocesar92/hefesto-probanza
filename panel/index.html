@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hefesto Probanza · Cadena de conformidad</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='19'>🔗</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="marca">
+    <span class="logo">🔗</span>
+    <div>
+      <strong>Hefesto Probanza</strong>
+      <small>CADENA DE CONFORMIDAD</small>
+    </div>
+  </div>
+  <div class="estado-integridad" id="integridad"></div>
+</header>
+
+<main>
+  <section class="h1">
+    <span class="eyebrow">LA PREGUNTA QUE HOY NO TIENE RESPUESTA</span>
+    <h1>¿Cuáles de estos envíos estaban cubiertos por un consentimiento vigente?</h1>
+    <p>ARCOP sabe qué autorizó un vecino. El anonimizador sabe qué salió hacia el
+    proveedor. Este panel es el que junta las dos cosas — y por eso puede
+    responder, para cada envío, si había autorización detrás.</p>
+  </section>
+
+  <section class="tarjetas" id="tarjetas"></section>
+
+  <section class="alerta-cabecera" id="integridad-detalle"></section>
+
+  <section class="bloque">
+    <div class="bloque-cabecera">
+      <div>
+        <h2>Envíos, uno por uno</h2>
+        <p>El número agregado no sirve para auditar. Lo que sirve son las filas.</p>
+      </div>
+      <div class="leyenda">
+        <span><i class="p-cubierto"></i>cubierto</span>
+        <span><i class="p-revocado"></i>revocado</span>
+        <span><i class="p-vencido"></i>vencido</span>
+        <span><i class="p-sin"></i>sin cobertura</span>
+      </div>
+    </div>
+    <div id="filas" class="filas"><p class="cargando">Cargando…</p></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Consentimientos del registro</h2>
+    <p class="nota">El estado no está en la fila: se deriva de las acciones, igual
+    que en ARCOP. Un consentido sin columna de estado no puede mentir.</p>
+    <div id="consents"></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Contraprueba</h2>
+    <p class="nota">El mismo escenario, sin ninguna retirada de consentimiento.
+    Si el veredicto <code>revocado</code> desapareciera, el número no sería el
+    resultado de mirar las acciones sino algo fijo en el panel.</p>
+    <button class="btn" id="btn-contraprueba">Correr sin retiradas</button>
+    <div id="contraprueba" class="salida"></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Mesa de evidencia</h2>
+    <p class="nota">Las tres fuentes juntas: qué se enviado sin consentimiento, qué
+    encontró la sonda y qué dice el manual de procedimientos. Cada fuente en su
+    cadena; lo que se cruza es el área, no los hechos.</p>
+    <div id="mesa"><p class="cargando">Cargando…</p></div>
+  </section>
+
+  <footer>
+    Escenario íntegramente inventado · sin conexiones reales · sin escáneres ni firmas válidas
+    · el informe de conformidad es una corrida real de spaudit sobre datos reales de una organización real
+  </footer>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

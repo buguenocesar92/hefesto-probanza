@@ -1,0 +1,260 @@
+/* Panel de la cadena de conformidad. Sin build: lo sirve el propio núcleo. */
+
+:root {
+  --fondo: #f4f6fa;
+  --tinta: #16213a;
+  --tenue: #77839a;
+  --borde: #e1e7f0;
+  --verde: #0d8d7c;
+  --verde-c: #e4f5f1;
+  --ambar: #b5760a;
+  --ambar-c: #fdf3e0;
+  --rojo: #c0392b;
+  --rojo-c: #fdecea;
+  --azul: #2b6cb0;
+  --azul-c: #e4effb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 30px;
+  background: #131d30;
+  color: #fff;
+  flex-wrap: wrap;
+}
+.marca { display: flex; gap: 11px; align-items: center; }
+.logo { font-size: 25px; }
+.marca strong { display: block; font-size: 15.5px; }
+.marca small { display: block; font-size: 9px; letter-spacing: 1.8px; color: #7e8ba3; }
+
+.estado-integridad { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  background: #1f2c46;
+  color: #b9c4d6;
+  font-weight: 600;
+}
+.pill.ok { background: #0f3f37; color: #6ee7c4; }
+.pill.mal { background: #4a1f1a; color: #ff9b8f; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 0 22px 70px; }
+
+.h1 { margin: 32px 0 26px; max-width: 780px; }
+.eyebrow { font-size: 10px; letter-spacing: 1.8px; font-weight: 700; color: #8d98ab; }
+h1 { font-size: 28px; letter-spacing: -.8px; margin: 6px 0 10px; line-height: 1.25; }
+.h1 p { color: #5b6880; line-height: 1.7; margin: 0; }
+h2 { font-size: 17px; margin: 0 0 4px; letter-spacing: -.2px; }
+.nota { color: var(--tenue); font-size: 12.5px; margin: 0 0 14px; line-height: 1.6; }
+
+/* ── Tarjetas de conteo ────────────────────────────────────────── */
+.tarjetas { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 22px; }
+@media (max-width: 860px) { .tarjetas { grid-template-columns: repeat(2, 1fr); } }
+
+.tarjeta {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 11px;
+  padding: 15px 16px;
+  border-left: 4px solid #cbd5e1;
+}
+.tarjeta b { display: block; font-size: 27px; letter-spacing: -1px; line-height: 1.1; }
+.tarjeta span { font-size: 11px; color: var(--tenue); text-transform: uppercase; letter-spacing: .7px; font-weight: 600; }
+.tarjeta.total { border-left-color: var(--azul); }
+.tarjeta.total b { color: var(--azul); }
+.tarjeta.cubierto { border-left-color: var(--verde); }
+.tarjeta.cubierto b { color: var(--verde); }
+.tarjeta.revocado { border-left-color: var(--rojo); }
+.tarjeta.revocado b { color: var(--rojo); }
+.tarjeta.vencido { border-left-color: var(--ambar); }
+.tarjeta.vencido b { color: var(--ambar); }
+.tarjeta.sin { border-left-color: #8a94a6; }
+.tarjeta.sin b { color: #6b7688; }
+
+/* ── Avisos ───────────────────────────────────────────────────── */
+.alerta-cabecera { margin-bottom: 26px; }
+.aviso {
+  border-radius: 9px;
+  padding: 12px 15px;
+  font-size: 12.5px;
+  line-height: 1.65;
+  border: 1px solid;
+  margin-bottom: 9px;
+}
+.aviso.ok { background: var(--verde-c); border-color: #b4e0d6; color: #075f54; }
+.aviso.mal { background: var(--rojo-c); border-color: #f2c2bb; color: #8c2d20; }
+.aviso.info { background: var(--azul-c); border-color: #bcd6f2; color: #1d4e80; }
+.aviso strong { display: block; margin-bottom: 3px; }
+
+/* ── Bloques y filas ──────────────────────────────────────────── */
+.bloque {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 11px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px #16213a0a;
+}
+.bloque-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.bloque-cabecera p { margin: 0; color: var(--tenue); font-size: 12.5px; }
+.leyenda { display: flex; gap: 12px; font-size: 11px; color: var(--tenue); flex-wrap: wrap; }
+.leyenda i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.p-cubierto { background: var(--verde); }
+.p-revocado { background: var(--rojo); }
+.p-vencido { background: var(--ambar); }
+.p-sin { background: #8a94a6; }
+
+.filas { display: flex; flex-direction: column; gap: 9px; }
+.cargando { color: var(--tenue); font-style: italic; text-align: center; padding: 20px; }
+
+.fila {
+  border: 1px solid var(--borde);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: #fbfcfe;
+}
+.fila.cubierto { border-left-color: var(--verde); }
+.fila.revocado { border-left-color: var(--rojo); background: #fffaf9; }
+.fila.vencido { border-left-color: var(--ambar); background: #fffdf8; }
+.fila.sin_cobertura { border-left-color: #8a94a6; background: #fafbfc; }
+
+.fila-cabecera { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.seq { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; color: var(--tenue); }
+
+.etiqueta {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+.etiqueta.cubierto { background: var(--verde-c); color: var(--verde); }
+.etiqueta.revocado { background: var(--rojo-c); color: var(--rojo); }
+.etiqueta.vencido { background: var(--ambar-c); color: var(--ambar); }
+.etiqueta.sin_cobertura { background: #eceff4; color: #5b6678; }
+
+/* Gravedad numerada de la mesa. Los mismos colores que los veredictos, para
+   que "crítica" se lea igual en las dos mitades del panel. */
+.etiqueta.n5 { background: var(--rojo-c); color: var(--rojo); }
+.etiqueta.n4 { background: #fdecea; color: var(--rojo); }
+.etiqueta.n3 { background: var(--ambar-c); color: var(--ambar); }
+.etiqueta.n2 { background: #eef4ff; color: #3b6fd4; }
+.etiqueta.n1 { background: #eceff4; color: #5b6678; }
+
+.cadenas-mesa { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 16px; }
+.origenes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 4px; }
+
+/* La entidad que se está mirando. Va arriba de todo porque es lo primero que
+   hay que comprobar antes de leer cualquier cifra: un tablero con los números
+   de una entidad puede estar mostrando los datos de otra. */
+.entidad {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+  padding: 12px 14px; margin-bottom: 14px;
+  background: var(--panel); border: 1px solid var(--borde); border-radius: 8px;
+}
+.entidad .nombre { font-weight: 650; font-size: 15px; letter-spacing: -.2px; }
+.entidad .dominio {
+  font-family: var(--mono); font-size: 12.5px; color: var(--tinta-2);
+}
+.entidad .cfg { font-size: 11.5px; color: var(--tenue); }
+@media (max-width: 640px) {
+  .entidad { padding: 10px 11px; gap: 7px; }
+  .entidad .nombre { font-size: 14px; width: 100%; }
+}
+.mesa h3 { font-size: 14px; margin: 22px 0 10px; letter-spacing: -.1px; }
+.mesa .tarjetas { margin-bottom: 0; }
+.categoria { color: var(--tenue); font-size: 11.5px; }
+.nuevo {
+  background: #eef4ff; color: #3b6fd4; border-radius: 4px;
+  padding: 1px 6px; font-size: 10.5px; font-weight: 600;
+}
+.mesa .aviso code { margin-right: 4px; }
+.mesa .aviso ul { margin: 8px 0 0; padding-left: 18px; }
+
+.texto { margin: 9px 0 0; font-size: 13px; line-height: 1.65; }
+.texto .orig { color: #3f4c63; }
+.texto .seg { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; color: var(--verde); background: var(--verde-c); padding: 1px 5px; border-radius: 4px; }
+
+.motivo {
+  margin: 8px 0 0;
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #f1f4f8;
+  color: #4a5870;
+}
+.motivo.revocado, .motivo.sin_cobertura { background: var(--rojo-c); color: #8c2d20; }
+.motivo.vencido { background: var(--ambar-c); color: #7a4e06; }
+
+.detalle-recibo {
+  margin: 9px 0 0;
+  font-size: 11.5px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  color: var(--tenue);
+  border-top: 1px dashed var(--borde);
+  padding-top: 8px;
+  word-break: break-all;
+}
+.detalle-recibo b { color: #4a5870; font-weight: 600; }
+
+/* ── Tablas ───────────────────────────────────────────────────── */
+/* Contenedor con scroll propio: una tabla ancha se desplaza dentro de su caja
+   en vez de estirar la página. En un teléfono esto es la diferencia entre
+   poder leer la fila y tener que arrastrar la pantalla de lado. */
+.tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tabla { width: 100%; border-collapse: collapse; min-width: 520px; }
+.tabla th {
+  text-align: left;
+  font-size: 9.5px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #8d98ab;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--borde);
+}
+.tabla td { padding: 9px 10px; border-bottom: 1px solid #f2f5f9; font-size: 12.5px; }
+.tabla code { background: #f1f4f8; padding: 1px 6px; border-radius: 4px; font-size: 11.5px; }
+
+.btn {
+  padding: 9px 15px;
+  border-radius: 7px;
+  border: 1px solid var(--borde);
+  background: #fff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #3f4c63;
+}
+.btn:hover { background: #f4f7fa; }
+.btn:disabled { opacity: .55; cursor: wait; }
+
+.salida { margin-top: 14px; }
+
+footer { text-align: center; font-size: 11px; color: #9aa5b6; padding: 26px 0 0; }

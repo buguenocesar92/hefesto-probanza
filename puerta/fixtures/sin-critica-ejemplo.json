@@ -1,0 +1,96 @@
+[
+  {
+    "id": "VULN-002",
+    "title": "Traversal de rutas al servir archivos estáticos",
+    "severity": "high",
+    "timestamp": "2026-10-17 12:04:00 UTC",
+    "finding_class": "dynamic",
+    "cvss": "7.5",
+    "confidence": "certain",
+    "cwe": "CWE-22",
+    "target": "http://127.0.0.1:8788",
+    "endpoint": "/panel/index.html",
+    "method": "GET",
+    "fix_effort": "trivial",
+    "agent_name": "agent-soc",
+    "agent_id": "agente-de-ejemplo",
+    "description": "La ruta solicitada se concatena al directorio de estáticos sin normalizar ni confinar a ese directorio.",
+    "impact": "Permite leer archivos fuera del directorio servido, como el manifiesto de dependencias.",
+    "poc_description": "Pedir un archivo dos niveles arriba del directorio servido.",
+    "poc_script_code": "curl http://127.0.0.1:8788/panel/../../package.json",
+    "remediation_steps": "Resolver la ruta real y comprobar que sigue dentro del directorio servido. Responder 404 ante cualquier ruta que se salga.",
+    "evidence": "La respuesta difiere en tamaño y tipo de contenido respecto a una ruta inexistente.",
+    "confidence_rationale": "Comportamiento observado y contrastado con la respuesta del servidor.",
+    "code_locations": [
+      {
+        "file": "server/index.mjs",
+        "line": 141,
+        "reason": "resolución de la ruta"
+      }
+    ]
+  },
+  {
+    "id": "VULN-003",
+    "title": "Falta autenticación en la ruta de restauración",
+    "severity": "medium",
+    "timestamp": "2026-10-17 12:07:00 UTC",
+    "finding_class": "dynamic",
+    "cvss": "5.3",
+    "confidence": "high",
+    "cwe": "CWE-306",
+    "target": "http://127.0.0.1:8788",
+    "endpoint": "/restaurar",
+    "method": "POST",
+    "fix_effort": "low",
+    "agent_name": "agent-soc",
+    "agent_id": "agente-de-ejemplo",
+    "description": "La ruta acepta peticiones sin token y responde con un mensaje de denegación distinto al de una petición sin autorización.",
+    "impact": "Permite enumerar si la funcionalidad está habilitada, aunque no restaure el texto.",
+    "poc_description": "Enviar una petición sin cabecera de autorización.",
+    "poc_script_code": "curl -X POST http://127.0.0.1:8788/restaurar -d '{}'",
+    "remediation_steps": "Aplicar la autenticación en la capa de enrutado, no dentro del manejador.",
+    "evidence": "El código de respuesta y el cuerpo difieren de una petición autenticada.",
+    "counterevidence": "El texto nunca sale sin token válido.",
+    "confidence_rationale": "Comportamiento estable en cuatro intentos.",
+    "code_locations": [
+      {
+        "file": "server/index.mjs",
+        "line": 88,
+        "reason": "comprobación interna del token"
+      }
+    ]
+  },
+  {
+    "id": "VULN-004",
+    "title": "Dependencia con vulnerabilidad conocida (CVE)",
+    "severity": "high",
+    "timestamp": "2026-10-17 12:11:00 UTC",
+    "finding_class": "dependency_cve",
+    "cvss": "8.1",
+    "confidence": "certain",
+    "cwe": "CWE-1395",
+    "cve": "CVE-2025-0000",
+    "target": "http://127.0.0.1:8788",
+    "fix_effort": "medium",
+    "agent_name": "agent-deps",
+    "agent_id": "agente-de-ejemplo",
+    "description": "Una dependencia transitiva fija una versión con vulnerabilidad publicada y con parche disponible.",
+    "impact": "Depende del componente afectado; en la versión publicada la ruta de retorno permite leer archivos fuera del directorio esperado.",
+    "poc_description": "No hay demostración en ejecución: el hallazgo es de dependencia.",
+    "remediation_steps": "Actualizar la dependencia transitiva a la versión corregida.",
+    "evidence": "La versión instalada coincide con el rango afectado del aviso.",
+    "confidence_rationale": "La versión coincide exactamente con el rango afectado.",
+    "dependency_metadata": {
+      "package_name": "ejemplo-transitivo",
+      "installed_version": "1.2.3",
+      "fixed_version": "1.2.9"
+    }
+  },
+  {
+    "id": "VULN-005",
+    "title": "Reporte mínimo: solo los cinco campos que Strix siempre escribe",
+    "severity": "low",
+    "timestamp": "2026-10-17 12:15:00 UTC",
+    "finding_class": "dynamic"
+  }
+]

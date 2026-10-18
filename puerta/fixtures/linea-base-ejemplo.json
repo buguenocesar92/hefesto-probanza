@@ -1,0 +1,218 @@
+{
+  "v": "cadena_hallazgos.v1",
+  "politica": "umbral:high",
+  "eventos": [
+    {
+      "v": "evento.v1",
+      "seq": 0,
+      "ts": "2026-10-17T12:00:00.000Z",
+      "sistema": "seguridad",
+      "tipo": "hallazgo.detectado",
+      "consentimiento": null,
+      "sujeto_ref": null,
+      "proposito": "superficie",
+      "datos": {
+        "tipos": [
+          "dynamic",
+          "cwe_1427"
+        ],
+        "huellas": [
+          "4777ef7e3eb8cb3eecb468b379181cb3cdc38b26f45d49e4661ecfdbc48315a8",
+          "c746762ed518e515e07dd4dc5928ee6828f97ddb2253f33e99f7ca67eaf2b664"
+        ],
+        "cantidad": 1,
+        "severidad": 5
+      },
+      "previo": null,
+      "hash": "c7c4a201ba49ca9280a98ca3100b7128b287667dccbb0798e03b57e49b1ec446"
+    },
+    {
+      "v": "evento.v1",
+      "seq": 1,
+      "ts": "2026-10-17T12:04:00.000Z",
+      "sistema": "seguridad",
+      "tipo": "hallazgo.detectado",
+      "consentimiento": null,
+      "sujeto_ref": null,
+      "proposito": "superficie",
+      "datos": {
+        "tipos": [
+          "dynamic",
+          "cwe_22"
+        ],
+        "huellas": [
+          "675ea53088037d199992f9414a74112f143f22ed6296e6bc655f0c3c713f7435",
+          "e04fc28171ac30897d677c4dd5ef4ca12872e3483d868d34d62f9996329d7931"
+        ],
+        "cantidad": 1,
+        "severidad": 4
+      },
+      "previo": "c7c4a201ba49ca9280a98ca3100b7128b287667dccbb0798e03b57e49b1ec446",
+      "hash": "feccd7644da2b9b5f098d5117d8551412089403b9e66137e8b611f755e7f3c44"
+    },
+    {
+      "v": "evento.v1",
+      "seq": 2,
+      "ts": "2026-10-17T12:11:00.000Z",
+      "sistema": "seguridad",
+      "tipo": "hallazgo.detectado",
+      "consentimiento": null,
+      "sujeto_ref": null,
+      "proposito": "superficie",
+      "datos": {
+        "tipos": [
+          "dependency_cve",
+          "cwe_1395"
+        ],
+        "huellas": [
+          "0cb1e855de8b3cc97a88759f1c14b5b064aeb393f897cd33771cff56523b6331",
+          "aa1202ec43fa78f7232e2f0026fa2a511ef468077aaf93fc9a68ed458b8fb6d6"
+        ],
+        "cantidad": 1,
+        "severidad": 4
+      },
+      "previo": "feccd7644da2b9b5f098d5117d8551412089403b9e66137e8b611f755e7f3c44",
+      "hash": "105bfee9d943006adc24da48126019c7e6102091bbad10991817db4904af61a8"
+    },
+    {
+      "v": "evento.v1",
+      "seq": 3,
+      "ts": "2026-10-17T12:07:00.000Z",
+      "sistema": "seguridad",
+      "tipo": "hallazgo.detectado",
+      "consentimiento": null,
+      "sujeto_ref": null,
+      "proposito": "superficie",
+      "datos": {
+        "tipos": [
+          "dynamic",
+          "cwe_306"
+        ],
+        "huellas": [
+          "6e6043d7fecdef7f0aedafcde0ab1e13d4656b41d7152234589667b3e0dc9ef1",
+          "ded138768ebbf5064f36d936985b2e322c4c65539e0bc6600656107a37a99833"
+        ],
+        "cantidad": 1,
+        "severidad": 3
+      },
+      "previo": "105bfee9d943006adc24da48126019c7e6102091bbad10991817db4904af61a8",
+      "hash": "6f92e1b848708f8df76d37315df56ba4343ad8cdc7dfd684ba4beda045ec07e9"
+    },
+    {
+      "v": "evento.v1",
+      "seq": 4,
+      "ts": "2026-10-17T12:15:00.000Z",
+      "sistema": "seguridad",
+      "tipo": "hallazgo.detectado",
+      "consentimiento": null,
+      "sujeto_ref": null,
+      "proposito": "superficie",
+      "datos": {
+        "tipos": [
+          "dynamic"
+        ],
+        "huellas": [
+          "470f97fab9caf6cd8b2a0b38a7ceece4680f8fa1c67df1c5ab207e25a84c1b71",
+          "03e5002b14f02314c7975201cc186301211c0f8f40a7e1ba0efb54e3bfdb4658"
+        ],
+        "cantidad": 1,
+        "severidad": 2
+      },
+      "previo": "6f92e1b848708f8df76d37315df56ba4343ad8cdc7dfd684ba4beda045ec07e9",
+      "hash": "4a4e2404d2635fc68ee49c377577a134ae1a7ac615fcce78510afaa62844ccd6"
+    }
+  ],
+  "huella_del_conjunto": "ab1a10c68928fcf21b0814800f29a4df70811ea9cf009393acb1127d68de81e4",
+  "sidecar": {
+    "4777ef7e3eb8cb3eecb468b379181cb3cdc38b26f45d49e4661ecfdbc48315a8": {
+      "id": "VULN-001",
+      "sitio": "c746762ed518e515e07dd4dc5928ee6828f97ddb2253f33e99f7ca67eaf2b664",
+      "titulo": "Inyección de prompt directa en el endpoint de consulta",
+      "gravedad": "critical",
+      "gravedad_desconocida": false,
+      "cvss": "9.1",
+      "confianza": "certain",
+      "esfuerzo_de_correccion": "medium",
+      "cve": null,
+      "cwe": "CWE-1427",
+      "objetivo": "http://127.0.0.1:8788",
+      "endpoint": "/api/consulta",
+      "metodo": "POST",
+      "clase": "dynamic",
+      "agente": "agent-soc",
+      "capturado": "2026-10-17T12:00:00.000Z"
+    },
+    "675ea53088037d199992f9414a74112f143f22ed6296e6bc655f0c3c713f7435": {
+      "id": "VULN-002",
+      "sitio": "e04fc28171ac30897d677c4dd5ef4ca12872e3483d868d34d62f9996329d7931",
+      "titulo": "Traversal de rutas al servir archivos estáticos",
+      "gravedad": "high",
+      "gravedad_desconocida": false,
+      "cvss": "7.5",
+      "confianza": "certain",
+      "esfuerzo_de_correccion": "trivial",
+      "cve": null,
+      "cwe": "CWE-22",
+      "objetivo": "http://127.0.0.1:8788",
+      "endpoint": "/panel/index.html",
+      "metodo": "GET",
+      "clase": "dynamic",
+      "agente": "agent-soc",
+      "capturado": "2026-10-17T12:04:00.000Z"
+    },
+    "0cb1e855de8b3cc97a88759f1c14b5b064aeb393f897cd33771cff56523b6331": {
+      "id": "VULN-004",
+      "sitio": "aa1202ec43fa78f7232e2f0026fa2a511ef468077aaf93fc9a68ed458b8fb6d6",
+      "titulo": "Dependencia con vulnerabilidad conocida (CVE)",
+      "gravedad": "high",
+      "gravedad_desconocida": false,
+      "cvss": "8.1",
+      "confianza": "certain",
+      "esfuerzo_de_correccion": "medium",
+      "cve": "CVE-2025-0000",
+      "cwe": "CWE-1395",
+      "objetivo": "http://127.0.0.1:8788",
+      "endpoint": null,
+      "metodo": null,
+      "clase": "dependency_cve",
+      "agente": "agent-deps",
+      "capturado": "2026-10-17T12:11:00.000Z"
+    },
+    "6e6043d7fecdef7f0aedafcde0ab1e13d4656b41d7152234589667b3e0dc9ef1": {
+      "id": "VULN-003",
+      "sitio": "ded138768ebbf5064f36d936985b2e322c4c65539e0bc6600656107a37a99833",
+      "titulo": "Falta autenticación en la ruta de restauración",
+      "gravedad": "medium",
+      "gravedad_desconocida": false,
+      "cvss": "5.3",
+      "confianza": "high",
+      "esfuerzo_de_correccion": "low",
+      "cve": null,
+      "cwe": "CWE-306",
+      "objetivo": "http://127.0.0.1:8788",
+      "endpoint": "/restaurar",
+      "metodo": "POST",
+      "clase": "dynamic",
+      "agente": "agent-soc",
+      "capturado": "2026-10-17T12:07:00.000Z"
+    },
+    "470f97fab9caf6cd8b2a0b38a7ceece4680f8fa1c67df1c5ab207e25a84c1b71": {
+      "id": "VULN-005",
+      "sitio": "03e5002b14f02314c7975201cc186301211c0f8f40a7e1ba0efb54e3bfdb4658",
+      "titulo": "Reporte mínimo: solo los cinco campos que Strix siempre escribe",
+      "gravedad": "low",
+      "gravedad_desconocida": false,
+      "cvss": null,
+      "confianza": null,
+      "esfuerzo_de_correccion": null,
+      "cve": null,
+      "cwe": null,
+      "objetivo": null,
+      "endpoint": null,
+      "metodo": null,
+      "clase": "dynamic",
+      "agente": null,
+      "capturado": "2026-10-17T12:15:00.000Z"
+    }
+  }
+}

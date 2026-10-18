@@ -1,0 +1,12 @@
+{
+  "origen": "hefesto-anonimizador/core",
+  "nota": "Copia byte a byte. Regenerar con: node tools/vendorizar.mjs",
+  "archivos": {
+    "anonimizador.mjs": "df0dbafeafac51da6a621e21e967d16a2ce7bb579fb6dd83ed45937eee9bf3d5",
+    "boveda.mjs": "e98b6ad827eb19f689a4e6e5ee6bf4c4ac2d4525797ae64be9010b054b0ad248",
+    "detectores/contextuales.mjs": "a72df57dac1ad19a7f3b6e629fcd21be004479cd8a127f1787192fb9699c4631",
+    "detectores/estructurados.mjs": "8f22eb053abe9ee2776c282b9d0d0f479de31deca8e1c4220b28c51f284a9943",
+    "sensible.mjs": "dc70ab4e5dd6a43e5b2f0ee798904cc20cb8f142c5633635c443fecefea31561",
+    "valores.mjs": "1427e894d8d7f8274701f23cf05d39b4258d052da20573f8191dfecf8da5dfec"
+  }
+}

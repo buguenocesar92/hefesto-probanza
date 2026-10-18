@@ -1,0 +1,11 @@
+# Datos sensibles: auditorías reales y vulnerabilidades con nombres de producto
+mesa/fixtures/spaudit-con-evidencia.json
+mesa/fixtures/spaudit-informe-real.json
+puerta/fixtures/vulnerabilidades-strix-real.json
+puerta/fixtures/vulnerabilidades-strix.json
+# Configuración del cliente (no se publica)
+config/entidad.ejemplo.json
+config/entidad.minima.json
+.env
+.env.*
+**/*.local.json
